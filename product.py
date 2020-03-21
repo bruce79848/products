@@ -2,7 +2,7 @@
 products = []
 with open('product.csv', 'r', encoding = 'utf-8') as f:
 	for line in f:
-		if '商品,價格' in line:
+		if 'Product,Price' in line:
 			continue
 		name, price = line.strip().split(',')
 		products.append([name, price])
@@ -24,6 +24,6 @@ for p in products:
 
 # Writing file
 with open('product.csv', 'w', encoding = 'utf-8') as f:
-	f.write('商品,價格\n')
+	f.write('Product,Price\n')
 	for p in products:
 		f.write(p[0] + ',' + str(p[1]) + '\n')
